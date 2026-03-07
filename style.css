@@ -1,8 +1,12 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f8;
-    margin: 40px;
+    margin: 0;
+    padding: 40px;
     line-height: 1.6;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -46,4 +50,22 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+#quiz-result {
+    margin-top: 10px;
+    font-weight: bold;
 }
