@@ -7,10 +7,10 @@
 
 <body>
     <nav>
-    <a href="#variables">Variables</a>
-    <a href="#lists">Lists</a>
-    <a href="#conditionals">Conditionals</a>
-    <a href="#functions">Functions</a>
+    <section id="variables"></section>
+    <section id="lists"></section>
+    <section id="conditionals"></section>   
+    <section id="functions"></section>
 </nav>
 
     <h1>Python Learning Webpage</h1>
@@ -64,7 +64,27 @@ print(greet("Shameka"))
 
     <h2>Conclusion</h2>
     <p>This webpage demonstrates the Python concepts I learned in CIS courses.</p>
+<section id="quiz">
+    <h2>Quick Python Quiz</h2>
 
+    <p>What symbol is used to assign a value to a variable in Python?</p>
+
+    <button onclick="checkAnswer('A')">A. =</button>
+    <button onclick="checkAnswer('B')">B. ==</button>
+    <button onclick="checkAnswer('C')">C. :</button>
+
+    <p id="quiz-result"></p>
+</section>
+<script>
+function checkAnswer(answer) {
+    const result = document.getElementById("quiz-result");
+
+    if (answer === "A") {
+        result.textContent = "Correct! = is used to assign a value.";
+    } else {
+        result.textContent = "Not quite. Try again!";
+    }
+}
+</script>
 </body>
 </html>
-
