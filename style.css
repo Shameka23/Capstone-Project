@@ -1,12 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
+    background: linear-gradient(to right, #dbeafe, #f3e8ff);
     padding: 40px;
     line-height: 1.6;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1000px;
+    margin: auto;
 }
 
 h1 {
@@ -32,12 +30,19 @@ p {
 }
 
 section {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.01);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.12);
 }
+
+/* ✅ hover MUST be separate */
+section:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
 button {
     padding: 10px 15px;
     margin: 5px;
@@ -51,8 +56,14 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
 nav {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
 }
 
 nav a {
@@ -65,7 +76,71 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+
 #quiz-result {
     margin-top: 10px;
     font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.example-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.explanation {
+    flex: 1;
+    min-width: 250px;
+}
+
+.code-example {
+    flex: 1;
+    min-width: 250px;
+}
+
+#progress label {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+#progress-result {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* 🌙 Dark mode */
+.dark-mode {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark-mode section {
+    background-color: #2c2c2c;
+}
+
+.dark-mode pre {
+    background-color: black;
+}
+
+.dark-mode header {
+    background-color: #111;
+}
+
+.dark-mode nav a {
+    color: #9ecbff;
 }
