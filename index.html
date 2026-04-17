@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <title>Python Learning Webpage - CIS 260</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav>
-    <section id="variables"></section>
-    <section id="lists"></section>
-    <section id="conditionals"></section>   
-    <section id="functions"></section>
+
+<nav>
+    <a href="#variables">Variables</a>
+    <a href="#lists">Lists</a>
+    <a href="#conditionals">Conditionals</a>
+    <a href="#functions">Functions</a>
+    <a href="#loops">Loops</a>
+    <a href="#dictionaries">Dictionaries</a>
+    <a href="#errors">Error Handling</a>
 </nav>
 
+<header>
     <h1>Python Learning Webpage</h1>
     <p>Created by Shameka Howard for CIS 260</p>
+</header>
 
-    <section>
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<section>
     <h2>What is Python?</h2>
     <p>Python is a beginner-friendly programming language used for building applications, data analysis, automation, and more.</p>
-    </section>
+</section>
 
-    <section>
+<section id="variables">
     <h2>Variables</h2>
-    <p>Variables store data values in a program.</p>
     <pre>
 x = 10
 name = "Shameka"
@@ -31,17 +39,16 @@ print(x)
     </pre>
 </section>
 
-<section>
+<section id="lists">
     <h2>Lists</h2>
-    <p>Lists store multiple values in a single variable.</p>
     <pre>
 numbers = [5, 10, 15]
 print(numbers)
     </pre>
 </section>
 
-    <h2>Conditional Statements</h2>
-    <p>Conditionals allow programs to make decisions.</p>
+<section id="conditionals">
+    <h2>Conditionals</h2>
     <pre>
 age = 18
 if age >= 18:
@@ -49,21 +56,58 @@ if age >= 18:
 else:
     print("Minor")
     </pre>
+</section>
 
+<section id="functions">
     <h2>Functions</h2>
-    <p>Functions allow code to be reused.</p>
     <pre>
 def greet(name):
     return "Hello " + name
 
 print(greet("Shameka"))
     </pre>
+</section>
 
-    <h2>What I Learned</h2>
-    <p>This project helped me understand how Python programs are structured and how to clearly explain programming concepts.</p>
+<section id="loops">
+    <h2>Loops</h2>
+    <pre>
+for i in range(5):
+    print(i)
+    </pre>
+</section>
 
-    <h2>Conclusion</h2>
-    <p>This webpage demonstrates the Python concepts I learned in CIS courses.</p>
+<section id="dictionaries">
+    <h2>Dictionaries</h2>
+    <pre>
+student = {
+    "name": "Shameka",
+    "grade": "A"
+}
+print(student["name"])
+    </pre>
+</section>
+
+<section id="errors">
+    <h2>Error Handling</h2>
+    <pre>
+try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+    </pre>
+</section>
+
+<section id="progress">
+    <h2>Learning Progress</h2>
+
+    <label><input type="checkbox" onclick="updateProgress()"> Variables</label><br>
+    <label><input type="checkbox" onclick="updateProgress()"> Lists</label><br>
+    <label><input type="checkbox" onclick="updateProgress()"> Conditionals</label><br>
+    <label><input type="checkbox" onclick="updateProgress()"> Functions</label><br>
+
+    <p id="progress-result">Progress: 0 / 4 topics completed</p>
+</section>
+
 <section id="quiz">
     <h2>Quick Python Quiz</h2>
 
@@ -85,6 +129,25 @@ function checkAnswer(answer) {
         result.textContent = "Not quite. Try again!";
     }
 }
+
+function updateProgress() {
+    const checkboxes = document.querySelectorAll('#progress input[type="checkbox"]');
+    let completed = 0;
+
+    checkboxes.forEach(box => {
+        if (box.checked) {
+            completed++;
+        }
+    });
+
+    document.getElementById("progress-result").textContent =
+        "Progress: " + completed + " / " + checkboxes.length + " topics completed";
+}  <!-- ✅ THIS WAS MISSING -->
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
 </script>
+
 </body>
 </html>
