@@ -1,10 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #dbeafe, #f3e8ff);
+    background: linear-gradient(135deg, #c7d2fe, #e9d5ff, #fbcfe8);
     padding: 40px;
     line-height: 1.6;
     max-width: 1000px;
     margin: auto;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h1 {
@@ -15,6 +21,7 @@ h1 {
 h2 {
     color: #34495e;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 pre {
@@ -29,98 +36,121 @@ p {
     font-size: 16px;
 }
 
+/* 🔥 Sections look like cards */
 section {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 15px;
-    box-shadow: 0px 8px 18px rgba(0,0,0,0.12);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
 }
 
-/* ✅ hover MUST be separate */
 section:hover {
     transform: translateY(-5px);
-    transition: 0.3s ease;
 }
 
+/* 🔥 Buttons upgraded */
 button {
-    padding: 10px 15px;
+    padding: 10px 18px;
     margin: 5px;
     border: none;
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #4CAF50, #22c55e);
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #43a047, #16a34a);
 }
 
+/* 🔥 Navigation */
 nav {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
     margin-bottom: 20px;
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
 }
 
 nav a {
-    margin-right: 15px;
+    margin: 0 10px;
     text-decoration: none;
     color: #3498db;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #1d4ed8;
 }
 
-#quiz-result {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
+/* 🔥 Header */
 header {
     text-align: center;
-    padding: 25px;
-    background-color: #2c3e50;
+    padding: 30px;
+    background: linear-gradient(135deg, #2c3e50, #4b5563);
     color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 25px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
 }
 
-header p {
+/* 🔥 Search bar */
+#searchBox {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* 🔥 Inputs (this was missing!) */
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
     margin-top: 5px;
-    font-size: 14px;
 }
 
-.example-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.explanation {
-    flex: 1;
-    min-width: 250px;
-}
-
-.code-example {
-    flex: 1;
-    min-width: 250px;
+/* 🔥 Progress bar */
+#progress-bar {
+    height: 20px;
+    width: 0%;
+    background: linear-gradient(90deg, #4CAF50, #22c55e);
+    border-radius: 10px;
+    transition: width 0.4s ease;
 }
 
 #progress label {
     display: block;
     margin: 8px 0;
-    font-size: 16px;
 }
 
 #progress-result {
     margin-top: 8px;
     font-weight: bold;
+}
+
+/* 🔥 Collapsible content */
+.content {
+    display: none;
+}
+
+/* 🔥 Certificate popup upgrade */
+#certificate {
+    animation: fadeIn 0.4s ease-in;
+}
+
+#certificate h2 {
+    color: #4CAF50;
 }
 
 /* 🌙 Dark mode */
