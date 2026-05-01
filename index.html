@@ -47,6 +47,7 @@
     <h2 onclick="toggleSection(this)">Variables (click to expand)</h2>
 
     <div class="content">
+
         <p><strong>Level:</strong> Beginner</p>
 
         <p>Variables store data that can be used later in a program.</p>
@@ -64,9 +65,9 @@ print(name)
         <button onclick="runVariable()">Run</button>
 
         <p id="varOutput"></p>
+
     </div>
 </section>
-<
 <section id="lists">
     <h2>Lists</h2>
     <pre>
@@ -206,9 +207,26 @@ function toggleDarkMode() {
 
 function runVariable() {
     let val = document.getElementById("varInput").value;
-    document.getElementById("varOutput").textContent = "Output: " + val;
+    let output = "";
 
+    if (val === "") {
+        output = ">>> Error: No value entered";
+    } else if (!isNaN(val)) {
+        output =
+`>>> x = ${val}
+>>> print(x)
+${val}`;
+    } else {
+        output =
+`>>> name = "${val}"
+>>> print(name)
+${val}`;
+    }
+
+    document.getElementById("varOutput").textContent = output;
 }
+output += "\nPython would store this in a variable.";
+
 function searchTopics() {
     let input = document.getElementById("searchBox").value.toLowerCase();
     let sections = document.querySelectorAll("section");
