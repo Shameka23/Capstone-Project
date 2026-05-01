@@ -174,3 +174,13 @@ input {
 .dark-mode nav a {
     color: #9ecbff;
 }
+
+#varOutput {
+    background-color: black;
+    color: #00ff9d;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: monospace;
+    white-space: pre-line;
+    margin-top: 10px;
+}
